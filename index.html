@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--
+  ___  ___ _ __ _ __ | | _____ __(_) |_| |__
+ / _ \/ _ \ '__| '_ \| |/ _ \ \/ / | __| '_ \
+|  __/  __/ |  | |_) | |  __/>  <| | |_| | | |
+ \___|\___|_|  | .__/|_|\___/_/\_\_|\__|_| |_|
+               |_|
+  Created with Perplexity Computer
+  https://www.perplexity.ai/computer
+-->
+<html class="dark" lang="en">
+<head>
+  <!-- Created with Perplexity Computer — https://www.perplexity.ai/computer -->
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Snapbooth 📸 | Capture the Moment</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error": "#ffb4ab",
+            "surface-bright": "#1a1c1e",
+            "primary": "#d0bcff",
+            "inverse-on-surface": "#1a1c1c",
+            "background": "#0f0e17",
+            "on-surface-variant": "#cbc3d7",
+            "surface-tint": "#d0bcff",
+            "on-primary-container": "#23005c",
+            "primary-container": "#6b38d4",
+            "on-primary": "#380093",
+            "surface-variant": "#494454",
+            "secondary": "#ffaed4",
+            "outline": "#958e9f",
+            "surface": "#0f0e17",
+            "surface-container": "#1d1b20",
+            "surface-container-high": "#28262b",
+            "surface-container-low": "#19171c",
+            "on-surface": "#e6e1e6",
+            "on-background": "#e6e1e6",
+            "outline-variant": "#494454"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* Subtle Grain Texture */
+    .grain-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 50;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* Hero Gradient Background */
+    .hero-bg {
+      background: radial-gradient(circle at 50% 50%, #1a1625 0%, #0d0c12 100%);
+      min-height: 100dvh;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate-soft-fade {
+      animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+</head>
+
+<body class="font-body text-on-surface bg-background antialiased selection:bg-primary/30">
+
+  <!-- Subtle Texture Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- Main Content Canvas -->
+  <main class="hero-bg flex items-center justify-center px-6 relative overflow-hidden">
+
+    <!-- Background Decorative Blurs -->
+    <div class="absolute top-[-10%] right-[-5%] w-[45rem] h-[45rem] bg-primary-container/20 blur-[120px] rounded-full pointer-events-none opacity-40"></div>
+    <div class="absolute bottom-[-10%] left-[-5%] w-[45rem] h-[45rem] bg-secondary/10 blur-[120px] rounded-full pointer-events-none opacity-30"></div>
+
+    <!-- Center Content -->
+    <div class="max-w-2xl w-full flex flex-col items-center text-center z-10 animate-soft-fade">
+
+      <!-- Headline -->
+      <h1 class="font-headline font-extrabold text-[4.5rem] md:text-[6rem] leading-[1.1] tracking-tighter text-on-surface mb-10 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+        Snapbooth <span class="inline-block">📸</span>
+      </h1>
+
+      <!-- Description Card -->
+      <div class="w-full bg-surface-container/40 backdrop-blur-2xl border border-white/5 rounded-[2rem] p-8 md:p-12 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.6)] mb-12">
+        <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed font-medium">
+          Snapbooth is a browser-based photobooth experience built for events, parties, and gatherings.
+          Capture moments, generate QR codes, and share photos instantly — no app required.
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <a
+        class="group relative inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-br from-primary-container to-[#4b2691] text-white font-semibold text-xl rounded-full shadow-[0_20px_40px_-10px_rgba(107,56,212,0.4)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_25px_50px_-12px_rgba(107,56,212,0.6)] active:scale-95"
+        href="https://arturojreal.com/snapbooth"
+      >
+        <span>Learn More</span>
+        <span class="material-symbols-outlined text-2xl transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
+          north_east
+        </span>
+      </a>
+
+      <!-- Sub-label -->
+      <p class="mt-16 font-label text-xs uppercase tracking-[0.2em] text-outline opacity-50">
+        Built for the tactile muse
+      </p>
+
+    </div>
+
+    <!-- Decorative Floating Photo Cards -->
+    <div class="hidden lg:block absolute left-[8%] top-[25%] rotate-[-6deg] animate-soft-fade" style="animation-delay: 0.2s;">
+      <div class="w-48 h-60 bg-surface-container-high p-3 rounded-xl shadow-2xl transform hover:rotate-2 transition-transform duration-500 border border-white/5">
+        <div class="w-full h-44 bg-surface-container rounded-lg overflow-hidden relative">
+          <img
+            alt="Candid polaroid style photo of friends laughing at a party"
+            class="w-full h-full object-cover opacity-80"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6gdhPltb8Y-Akh4YPY2BTFu3jYC6Hr7XjHBxzOCrFPEjUzUlYrZXTBVkjONX5ibcUoXlGrSpYL55e-JTGlCdbixXfuiiPNH6LZkPpwY49Z1tnrbA0YL-fqQUZR8htXW00z8_EwkXAfdqRzLBc0o4L6NaNE2ofXrkAWqR4cUWFSW8_X0b7tGuxIIzx5Wc5-XfTzZXppXwS7nKirFv14TarFRSMRRYA6n3t_-zDyu64wFZAmLbgd1Nz1ie2LXaN3k1aZN0tr4HIvGrF"
+          />
+        </div>
+        <div class="mt-4 h-2 w-2/3 bg-surface-variant rounded-full opacity-30"></div>
+      </div>
+    </div>
+
+    <div class="hidden lg:block absolute right-[8%] bottom-[20%] rotate-[8deg] animate-soft-fade" style="animation-delay: 0.4s;">
+      <div class="w-56 h-72 bg-surface-container-high p-3 rounded-xl shadow-2xl transform hover:-rotate-2 transition-transform duration-500 border border-white/5">
+        <div class="w-full h-56 bg-surface-container rounded-lg overflow-hidden">
+          <img
+            alt="Abstract vibrant neon lights at a festival or event"
+            class="w-full h-full object-cover opacity-90"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUKvJOmh0Ks4te67nk0_orkHRrXxbVQhKZV6wkJTDyDfAa3hDY-BIJjdAtRHwe586IojmPksWLrF483bni4VaraQHxcdb_gBbxa_sNYCao93mjSGPtHmhZRbjjZz-WtvClUg6NxPz4u8PSlkFBLG6sjcjuGFMAS9DPf1TmwPBwcp4kYg8nsaKe8jyLHEoHoV5FJb9Rbb27tSIMPQowNoNDqIUutxqanqoD5F9MdKR7kpYKWPHyOy1ck4OwJs0DCdTXJ9lB4y85GYKb"
+          />
+        </div>
+        <div class="mt-5 h-2 w-1/2 bg-surface-variant rounded-full opacity-30"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="fixed bottom-4 left-0 right-0 flex justify-center z-50 pointer-events-none">
+    <a
+      href="https://www.perplexity.ai/computer"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="pointer-events-auto font-label text-xs uppercase tracking-[0.15em] text-outline opacity-30 hover:opacity-60 transition-opacity duration-300"
+    >
+      Created with Perplexity Computer
+    </a>
+  </footer>
+
+</body>
+</html>
